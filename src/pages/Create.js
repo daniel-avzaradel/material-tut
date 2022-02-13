@@ -3,8 +3,24 @@ import { Typography, Button, ButtonGroup, Container } from "@material-ui/core";
 import AcUnitIcon from "@material-ui/icons/AcUnit";
 import SendIcon from "@material-ui/icons/Send";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+  btn: {
+    fontSize: 20,
+    backgroundColor: "violet",
+    "&:hover": {
+      backgroundColor: "lightblue",
+    },
+  },
+  title: {
+    textDecoration: "underline",
+    marginBottom: 20,
+  },
+});
 
 export default function Create() {
+  const classes = useStyles();
   return (
     <Container>
       <Typography
@@ -12,10 +28,11 @@ export default function Create() {
         component="h2"
         gutterBottom
         color="textSecondary"
+        className={classes.title}
       >
         Create a New Note
       </Typography>
-      <Button variant="contained" disableElevation>
+      <Button variant="contained" disableElevation className={classes.btn}>
         Contained
       </Button>
       <br />
