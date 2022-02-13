@@ -10,6 +10,7 @@ import AcUnitIcon from "@material-ui/icons/AcUnit";
 import SendIcon from "@material-ui/icons/Send";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import { makeStyles } from "@material-ui/core";
+import Snackbar from "@material-ui/core/Snackbar";
 
 const useStyles = makeStyles({
   btn: {
@@ -37,10 +38,30 @@ export default function Create() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title && details) {
-      console.log(title, details);
-    }
   };
+
+  const [openToast, setOpenToast] = useState({
+    open: false,
+    vertical: "top",
+    horizontal: "center",
+  });
+
+  const { vertical, horizontal, open } = openToast;
+
+  const handleClick = () => {
+    setOpenToast({ ...openToast, open: true });
+  };
+
+  const handleClose = () => {
+    console.log("close");
+  };
+
+  const action = (
+    <Button color="secondary" size="small">
+      lorem ipsum dolorem
+    </Button>
+  );
+
   return (
     <Container>
       <Typography
@@ -90,7 +111,11 @@ export default function Create() {
       <AcUnitIcon fontSize="small" />
       <br />
       <br />
-      <form action="" noValidate autoComplete="off" onSubmit={handleSubmit}>
+
+      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+        <Typography variant="h5" component="h2">
+          Form
+        </Typography>
         <TextField
           onChange={(e) => setTitle(e.target.value)}
           className={classes.field}
@@ -115,11 +140,22 @@ export default function Create() {
         <Button
           color="secondary"
           variant="contained"
-          type="Submit"
           endIcon={<SendIcon />}
+          onClick={handleClick}
         >
           Submit
         </Button>
+        <Snackbar
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+          open={open}
+          autoHideDuration={2000}
+          onClose={handleClose}
+          message="Please fill all required fields"
+          action={action}
+        />
       </form>
     </Container>
   );
