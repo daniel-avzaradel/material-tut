@@ -1,5 +1,8 @@
 import React from "react";
 import { Typography, Button, ButtonGroup, Container } from "@material-ui/core";
+import AcUnitIcon from "@material-ui/icons/AcUnit";
+import SendIcon from "@material-ui/icons/Send";
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 
 export default function Create() {
   return (
@@ -17,7 +20,11 @@ export default function Create() {
       </Button>
       <br />
       <br />
-      <Button variant="outlined" disableElevation>
+      <Button
+        endIcon={<KeyboardArrowRightIcon />}
+        variant="outlined"
+        disableElevation
+      >
         Outlined
       </Button>
       <br />
@@ -26,6 +33,7 @@ export default function Create() {
         color="secondary"
         variant="contained"
         onClick={() => console.log("you clicked me")}
+        endIcon={<SendIcon />}
       >
         Submit
       </Button>
@@ -36,6 +44,13 @@ export default function Create() {
         <Button>Two</Button>
         <Button>Three</Button>
       </ButtonGroup>
+      <br />
+      <br />
+      {/* icons */}
+      <AcUnitIcon color="secondary" />
+      <AcUnitIcon fontSize="large" />
+      <AcUnitIcon />
+      <AcUnitIcon fontSize="small" />
     </Container>
   );
 }
