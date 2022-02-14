@@ -1,33 +1,21 @@
-import React, { useState, useHistory } from "react";
-import {
-  Typography,
-  Button,
-  ButtonGroup,
-  Container,
-  TextField,
-  makeStyles,
-  Radio,
-  RadioGroup,
-  FormControlLabel,
-  FormControl,
-  FormLabel,
-} from "@material-ui/core";
+import React, { useState } from "react";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
+import { makeStyles } from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
-  btn: {
-    fontSize: 20,
-    backgroundColor: "violet",
-    "&:hover": {
-      backgroundColor: "lightblue",
-    },
-  },
-  title: {
-    textDecoration: "underline",
-    marginBottom: 20,
-  },
   field: {
     marginTop: 20,
-    marginTop: 20,
+    marginBottom: 20,
     display: "block",
   },
 });
@@ -62,48 +50,49 @@ export default function Create() {
   };
 
   return (
-    <Container>
+    <Container size="sm">
       <Typography
         variant="h6"
+        color="textSecondary"
         component="h2"
         gutterBottom
-        color="textSecondary"
-        className={classes.title}
       >
         Create a New Note
       </Typography>
 
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-        <Typography variant="h5" component="h2">
-          Form
-        </Typography>
         <TextField
-          onChange={(e) => setTitle(e.target.value)}
           className={classes.field}
-          variant="outlined"
+          onChange={(e) => setTitle(e.target.value)}
           label="Note Title"
+          variant="outlined"
           color="secondary"
           fullWidth
           required
+          error={titleError}
         />
         <TextField
-          onChange={(e) => setDetails(e.target.value)}
           className={classes.field}
-          variant="outlined"
+          onChange={(e) => setDetails(e.target.value)}
           label="Details"
+          variant="outlined"
           color="secondary"
-          fullWidth
           multiline
           rows={4}
+          fullWidth
           required
+          error={detailsError}
         />
-        <br />
+
+        {/* <Radio value="hello" />
+        <Radio value="goodbye" /> */}
+
         <FormControl className={classes.field}>
+          <FormLabel>Note Category</FormLabel>
           <RadioGroup
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <FormLabel>Note Category</FormLabel>
             <FormControlLabel value="money" control={<Radio />} label="Money" />
             <FormControlLabel value="todos" control={<Radio />} label="Todos" />
             <FormControlLabel
@@ -114,8 +103,13 @@ export default function Create() {
             <FormControlLabel value="work" control={<Radio />} label="Work" />
           </RadioGroup>
         </FormControl>
-        <br />
-        <Button color="secondary" variant="contained" type="submit">
+
+        <Button
+          type="submit"
+          color="secondary"
+          variant="contained"
+          endIcon={<KeyboardArrowRightIcon />}
+        >
           Submit
         </Button>
       </form>
