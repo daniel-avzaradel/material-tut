@@ -3,6 +3,8 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
 
+import NoteCard from "../components/NoteCard";
+
 export default function Notes() {
   const [notes, setNotes] = useState([]);
 
@@ -29,11 +31,11 @@ export default function Notes() {
         </Grid>
       </Grid> */}
       <Container>
-        <Grid container>
+        <Grid container spacing={3}>
           {notes.map((note) => {
             return (
-              <Grid item key={note.id} xs={12} sm={3} md={3}>
-                <Paper>{note.title}</Paper>
+              <Grid item key={note.id} xs={12} md={6} lg={4}>
+                <NoteCard note={note}>{note.title}</NoteCard>
               </Grid>
             );
           })}
