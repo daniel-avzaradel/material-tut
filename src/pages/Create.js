@@ -5,12 +5,11 @@ import {
   ButtonGroup,
   Container,
   TextField,
+  makeStyles,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
 } from "@material-ui/core";
-import AcUnitIcon from "@material-ui/icons/AcUnit";
-import SendIcon from "@material-ui/icons/Send";
-import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
-import { makeStyles } from "@material-ui/core";
-import Snackbar from "@material-ui/core/Snackbar";
 
 const useStyles = makeStyles({
   btn: {
@@ -40,28 +39,6 @@ export default function Create() {
     e.preventDefault();
   };
 
-  const [openToast, setOpenToast] = useState({
-    open: false,
-    vertical: "top",
-    horizontal: "center",
-  });
-
-  const { vertical, horizontal, open } = openToast;
-
-  const handleClick = () => {
-    setOpenToast({ ...openToast, open: true });
-  };
-
-  const handleClose = () => {
-    console.log("close");
-  };
-
-  const action = (
-    <Button color="secondary" size="small">
-      lorem ipsum dolorem
-    </Button>
-  );
-
   return (
     <Container>
       <Typography
@@ -78,11 +55,7 @@ export default function Create() {
       </Button>
       <br />
       <br />
-      <Button
-        endIcon={<KeyboardArrowRightIcon />}
-        variant="outlined"
-        disableElevation
-      >
+      <Button variant="outlined" disableElevation>
         Outlined
       </Button>
       <br />
@@ -91,7 +64,6 @@ export default function Create() {
         color="secondary"
         variant="contained"
         onClick={() => console.log("you clicked me")}
-        endIcon={<SendIcon />}
       >
         Submit
       </Button>
@@ -102,13 +74,6 @@ export default function Create() {
         <Button>Two</Button>
         <Button>Three</Button>
       </ButtonGroup>
-      <br />
-      <br />
-      {/* icons */}
-      <AcUnitIcon color="secondary" />
-      <AcUnitIcon fontSize="large" />
-      <AcUnitIcon />
-      <AcUnitIcon fontSize="small" />
       <br />
       <br />
 
@@ -137,25 +102,20 @@ export default function Create() {
           required
         />
         <br />
-        <Button
-          color="secondary"
-          variant="contained"
-          endIcon={<SendIcon />}
-          onClick={handleClick}
-        >
+        <RadioGroup>
+          <FormControlLabel value="money" control={<Radio />} label="Money" />
+          <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+          <FormControlLabel
+            value="reminders"
+            control={<Radio />}
+            label="Reminders"
+          />
+          <FormControlLabel value="work" control={<Radio />} label="Work" />
+        </RadioGroup>
+        <br />
+        <Button color="secondary" variant="contained">
           Submit
         </Button>
-        <Snackbar
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "left",
-          }}
-          open={open}
-          autoHideDuration={2000}
-          onClose={handleClose}
-          message="Please fill all required fields"
-          action={action}
-        />
       </form>
     </Container>
   );
