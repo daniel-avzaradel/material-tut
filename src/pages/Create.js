@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useHistory } from "react";
 import {
   Typography,
   Button,
@@ -34,13 +34,31 @@ const useStyles = makeStyles({
 
 export default function Create() {
   const classes = useStyles();
+  const history = useHistory();
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
+  const [titleError, setTitleError] = useState(false);
+  const [detailsError, setDetailsError] = useState(false);
   const [category, setCategory] = useState("money");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title, details, category);
+    setTitleError(false);
+    setDetailsError(false);
+
+    if (title == "") {
+      setTitleError(true);
+    }
+    if (details == "") {
+      setDetailsError(true);
+    }
+    if (title && details) {
+      fetch("http://localhost:8000/notes", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ title, details, category }),
+      }).then(() => history.push("/"));
+    }
   };
 
   return (
@@ -54,32 +72,6 @@ export default function Create() {
       >
         Create a New Note
       </Typography>
-      <Button variant="contained" disableElevation className={classes.btn}>
-        Contained
-      </Button>
-      <br />
-      <br />
-      <Button variant="outlined" disableElevation>
-        Outlined
-      </Button>
-      <br />
-      <br />
-      <Button
-        color="secondary"
-        variant="contained"
-        onClick={() => console.log("you clicked me")}
-      >
-        Submit
-      </Button>
-      <br />
-      <br />
-      <ButtonGroup color="secondary" variant="contained">
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
-      <br />
-      <br />
 
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <Typography variant="h5" component="h2">
