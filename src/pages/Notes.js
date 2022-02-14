@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import Container from "@material-ui/core/Container";
 
 export default function Notes() {
   const [notes, setNotes] = useState([]);
@@ -13,23 +14,31 @@ export default function Notes() {
 
   return (
     <div>
-      <Grid container>
-        <Grid item md={3}>
+      {/* <Grid container>
+        <Grid item xs={12} sm={6} md={3}>
           <Paper>1</Paper>
         </Grid>
-        <Grid item md={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <Paper>2</Paper>
         </Grid>
-        <Grid item md={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <Paper>3</Paper>
         </Grid>
-        <Grid item md={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <Paper>4</Paper>
         </Grid>
-      </Grid>
-      {notes.map((note) => {
-        return <div key={note.id}>{note.title}</div>;
-      })}
+      </Grid> */}
+      <Container>
+        <Grid container>
+          {notes.map((note) => {
+            return (
+              <Grid item key={note.id} xs={12} sm={3} md={3}>
+                <Paper>{note.title}</Paper>
+              </Grid>
+            );
+          })}
+        </Grid>
+      </Container>
     </div>
   );
 }
