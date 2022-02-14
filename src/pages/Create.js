@@ -34,9 +34,11 @@ export default function Create() {
   const classes = useStyles();
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
+  const [category, setCategory] = useState("money");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(title, details, category);
   };
 
   return (
@@ -102,7 +104,10 @@ export default function Create() {
           required
         />
         <br />
-        <RadioGroup>
+        <RadioGroup
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
           <FormControlLabel value="money" control={<Radio />} label="Money" />
           <FormControlLabel value="todos" control={<Radio />} label="Todos" />
           <FormControlLabel
@@ -113,7 +118,7 @@ export default function Create() {
           <FormControlLabel value="work" control={<Radio />} label="Work" />
         </RadioGroup>
         <br />
-        <Button color="secondary" variant="contained">
+        <Button color="secondary" variant="contained" type="submit">
           Submit
         </Button>
       </form>
