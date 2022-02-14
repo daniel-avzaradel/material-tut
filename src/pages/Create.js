@@ -9,6 +9,8 @@ import {
   Radio,
   RadioGroup,
   FormControlLabel,
+  FormControl,
+  FormLabel,
 } from "@material-ui/core";
 
 const useStyles = makeStyles({
@@ -104,19 +106,22 @@ export default function Create() {
           required
         />
         <br />
-        <RadioGroup
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <FormControlLabel value="money" control={<Radio />} label="Money" />
-          <FormControlLabel value="todos" control={<Radio />} label="Todos" />
-          <FormControlLabel
-            value="reminders"
-            control={<Radio />}
-            label="Reminders"
-          />
-          <FormControlLabel value="work" control={<Radio />} label="Work" />
-        </RadioGroup>
+        <FormControl className={classes.field}>
+          <RadioGroup
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <FormLabel>Note Category</FormLabel>
+            <FormControlLabel value="money" control={<Radio />} label="Money" />
+            <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+            <FormControlLabel
+              value="reminders"
+              control={<Radio />}
+              label="Reminders"
+            />
+            <FormControlLabel value="work" control={<Radio />} label="Work" />
+          </RadioGroup>
+        </FormControl>
         <br />
         <Button color="secondary" variant="contained" type="submit">
           Submit
