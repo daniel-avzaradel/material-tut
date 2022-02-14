@@ -110,7 +110,7 @@ export default function Create() {
             control={<Radio />}
             label="Reminders"
           />
-          <FormControlLabel value="work" control={<Radio />} label="Work" />
+          {/* <FormControlLabel value="work" control={<Radio />} label="Work" /> */}
         </RadioGroup>
         <br />
         <Button color="secondary" variant="contained">
