@@ -8,6 +8,8 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  AppBar,
+  Toolbar,
 } from "@material-ui/core";
 import { SubjectOutlined, AddCircleOutlineOutlined } from "@material-ui/icons";
 
@@ -35,6 +37,10 @@ const useStyles = makeStyles((theme) => {
     title: {
       padding: theme.spacing(2),
     },
+    appbar: {
+      width: `calc(100% - ${drawerWidth}px)`,
+    },
+    toolbar: theme.mixins.toolbar,
   };
 });
 
@@ -58,6 +64,11 @@ function Layout({ children }) {
   return (
     <div className={classes.root}>
       {/* App bar */}
+      <AppBar className={classes.appbar}>
+        <Toolbar>
+          <Typography>Welcome to the Ninja</Typography>
+        </Toolbar>
+      </AppBar>
 
       {/* Side Drawer */}
       <Drawer
@@ -91,7 +102,7 @@ function Layout({ children }) {
         </List>
       </Drawer>
       <div className={classes.page}>
-        <div>{children}</div>
+        <div className={classes.toolbar}>{children}</div>
       </div>
     </div>
   );
