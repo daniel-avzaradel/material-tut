@@ -1,22 +1,22 @@
 {
   "notes": [
     {
-      "title": "Yoshi's birthday bash",
-      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      "category": "reminders",
-      "id": 1
-    },
-    {
       "title": "Complete my ninja training",
       "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
       "category": "work",
       "id": 2
     },
     {
-      "title": "Order a pizza!",
-      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "title": "Testing",
+      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quia ea aut at debitis excepturi culpa nobis reprehenderit vel architecto nisi fugit nam earum quasi quas reiciendis amet, quidem aliquam ipsum minima odit porro. Cumque labore praesentium vitae sint ipsam.",
+      "category": "work",
+      "id": 4
+    },
+    {
+      "title": "Another Lorem",
+      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quia ea aut at debitis excepturi culpa nobis reprehenderit vel architecto nisi fugit nam earum quasi quas reiciendis amet, quidem aliquam ipsum minima odit porro.",
       "category": "todos",
-      "id": 3
+      "id": 5
     }
   ]
 }
