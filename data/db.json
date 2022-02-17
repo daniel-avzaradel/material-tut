@@ -1,12 +1,6 @@
 {
   "notes": [
     {
-      "title": "Complete my ninja training",
-      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
-      "category": "work",
-      "id": 2
-    },
-    {
       "title": "Testing",
       "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quia ea aut at debitis excepturi culpa nobis reprehenderit vel architecto nisi fugit nam earum quasi quas reiciendis amet, quidem aliquam ipsum minima odit porro. Cumque labore praesentium vitae sint ipsam.",
       "category": "work",
@@ -23,6 +17,36 @@
       "details": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat doloribus nostrum quibusdam necessitatibus hic tempora commodi beatae ipsa saepe iusto!",
       "category": "money",
       "id": 6
+    },
+    {
+      "title": "Meeting in RM-2",
+      "details": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit beatae dicta voluptatibus?",
+      "category": "work",
+      "id": 7
+    },
+    {
+      "title": "Dentist Appointment",
+      "details": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit beatae dicta voluptatibus?",
+      "category": "reminders",
+      "id": 8
+    },
+    {
+      "title": "Roadmap meeting #2",
+      "details": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate illo rem ipsa quia magni, eius rerum esse dignissimos laborum obcaecati voluptates porro ipsum commodi.",
+      "category": "todos",
+      "id": 9
+    },
+    {
+      "title": "Travel",
+      "details": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate illo rem ipsa quia magni, eius rerum esse dignissimos laborum obcaecati voluptates porro ipsum commodi.",
+      "category": "reminders",
+      "id": 10
+    },
+    {
+      "title": "Compugen Cloud",
+      "details": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius deserunt eos mollitia quos architecto rem ad! Autem, assumenda rerum? Dolorum est omnis iure dolore maiores corrupti tempora aliquid sapiente eos!",
+      "category": "work",
+      "id": 11
     }
   ]
 }
