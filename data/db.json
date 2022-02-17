@@ -17,6 +17,12 @@
       "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quia ea aut at debitis excepturi culpa nobis reprehenderit vel architecto nisi fugit nam earum quasi quas reiciendis amet, quidem aliquam ipsum minima odit porro.",
       "category": "todos",
       "id": 5
+    },
+    {
+      "title": "Yoshi's birthday",
+      "details": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat doloribus nostrum quibusdam necessitatibus hic tempora commodi beatae ipsa saepe iusto!",
+      "category": "money",
+      "id": 6
     }
   ]
 }
